@@ -8,7 +8,7 @@
     - autoconf 
     - automake 
     - build-essential
-    - install yasm
+    - yasm
     - libfdk-aac-dev
     - libass-dev 
     - libgpac-dev
