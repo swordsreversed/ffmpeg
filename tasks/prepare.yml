@@ -25,6 +25,7 @@
     - texi2html 
     - zlib1g-dev
     - libmp3lame-dev
+    - libopus-dev
 
 - name: make source folder
   file: dest={{ ffmpeg_source_dir }}/ffmpeg_source state=directory
