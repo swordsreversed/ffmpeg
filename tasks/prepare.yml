@@ -8,6 +8,7 @@
     - autoconf 
     - automake 
     - build-essential 
+    - libfdk-aac-dev
     - libass-dev 
     - libgpac-dev
     - libsdl1.2-dev 
