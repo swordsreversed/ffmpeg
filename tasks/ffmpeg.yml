@@ -1,5 +1,5 @@
 - name: Check to see if ffmpeg is installed
-  shell: ffmpeg -v >/dev/null 2>&1
+  shell: command -v ffmpeg >/dev/null 2>&1
   ignore_errors: yes
   register: ffmpeg_is_installed
 
