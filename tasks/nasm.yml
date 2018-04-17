@@ -3,8 +3,8 @@
    ignore_errors: yes
    register: nasm_is_installed
   
-- debug: msg="{{ nasm_is_installed.rc }}" # it returns rc 1
-- debug: var=nasm_is_installed
+ - debug: msg="{{ nasm_is_installed.rc }}" # it returns rc 1
+ - debug: var=nasm_is_installed
 
  - name:  get nasm
    unarchive:
