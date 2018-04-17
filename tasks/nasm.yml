@@ -1,3 +1,8 @@
+ - name: Check to see if nasm is installed
+   shell: command -v nasm >/dev/null 2>&1
+   ignore_errors: yes
+   register: nasm_is_installed
+  
  - name:  get nasm
    unarchive:
      src: http://www.nasm.us/pub/nasm/releasebuilds/2.13.02/nasm-2.13.02.tar.bz2
@@ -12,3 +17,4 @@
       - make
       - make install
       - make distclean
+   when: nasm_is_installed.rc != 0
