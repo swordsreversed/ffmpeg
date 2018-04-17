@@ -17,4 +17,4 @@
       - make
       - make install
       - make distclean
-   when: nasm_is_installed.rc != 1
+   when: nasm_is_installed.rc != 0
