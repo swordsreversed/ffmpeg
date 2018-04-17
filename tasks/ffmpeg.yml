@@ -1,5 +1,5 @@
 - name: Check to see if ffmpeg is installed
-  shell: "apt-cache policy ffmpeg"
+  shell: "ffmpeg"
   register: ffmpeg_is_installed
 
 - name: clone latest ffmpeg
@@ -14,4 +14,4 @@
     - make
     - make install
     - make distclean
-  when: ffmpeg_is_installed.rc != 0
+  when: ffmpeg_is_installed.rc != "command not found"
