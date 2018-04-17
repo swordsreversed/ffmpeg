@@ -1,3 +1,7 @@
+- name: Check to see if ffmpeg is installed
+  shell: "apt-cache policy ffmpeg"
+  register: ffmpeg_is_installed
+
 - name: clone latest ffmpeg
   git: repo=git://source.ffmpeg.org/ffmpeg.git accept_hostkey=true dest={{ ffmpeg_source_dir }}/ffmpeg
 
@@ -10,3 +14,4 @@
     - make
     - make install
     - make distclean
+  when: ffmpeg_is_installed.rc != 0
