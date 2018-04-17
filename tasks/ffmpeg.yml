@@ -1,5 +1,6 @@
 - name: Check to see if ffmpeg is installed
-  shell: "ffmpeg"
+  shell: ffmpeg -v >/dev/null 2>&1
+  ignore_errors: yes
   register: ffmpeg_is_installed
 
 - name: clone latest ffmpeg
@@ -14,4 +15,4 @@
     - make
     - make install
     - make distclean
-  when: ffmpeg_is_installed.rc != "command not found"
+  when: ffmpeg_is_installed.rc != 0
