@@ -3,9 +3,6 @@
    ignore_errors: yes
    register: nasm_is_installed
   
- - debug: msg="{{ nasm_is_installed.rc }}" # it returns rc 1
- - debug: var=nasm_is_installed
-
  - name:  get nasm
    unarchive:
      src: http://www.nasm.us/pub/nasm/releasebuilds/2.13.02/nasm-2.13.02.tar.bz2
@@ -20,4 +17,4 @@
       - make
       - make install
       - make distclean
-   when: nasm_is_installed.rc != 0
+   when: nasm_is_installed.rc != 1
